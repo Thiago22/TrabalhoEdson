@@ -80,7 +80,7 @@ def caixaFluxo(request):
         total = 0 
 
         try:
-            contas = Conta.objects.filter(data__range=(data_inicios, data_final)) #buscando as contas dentro do periodo
+            contas = Conta.objects.filter(data__range=(data_inicio, data_final)) #buscando as contas dentro do periodo
             for conta in contas: # percorrer todas as contas que achar, se for E de entrada será somado, se for S de saída será subtraído
                 if conta.tipo == 'E':
                     total += conta.valor
